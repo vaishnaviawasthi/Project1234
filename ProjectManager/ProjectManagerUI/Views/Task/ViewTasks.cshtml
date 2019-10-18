@@ -1,0 +1,113 @@
+﻿@model IEnumerable<ProjectManagerUI.ViewModels.TaskViewModel>
+
+@{
+    ViewBag.Title = "ViewTasks";
+}
+
+<h2>View Tasks</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TaskId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaskName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaskDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaskStartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaskEndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaskPriority)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaskStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskPriority)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeId)
+            </td>
+
+
+        </tr>
+    }
+
+</table>
+@*@section scripts{
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type="text/javascript" src="~/Scripts/jquery.validate.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(function TaskStatus("Pending") {
+                var da;
+                var from = $("#ProjectEndDate")
+                    .Where(from => from.TaskStatus(false) || (from.TaskStatus("Pending")))
+                    .GroupBy(from => from.TaskStatus)
+                    .Select(from => from.OrderByDescending(da => da.DateTime.First()).ToList();
+
+            });
+        
+            $(function TaskStatus("Completed") {
+                var da;
+                var from = $("#ProjectEndDate")
+                    .Where(from => from.TaskStatus(false) || (from.TaskStatus("Completed")))
+                    .GroupBy(from => from.TaskStatus)
+                    .Select(from => from.OrderByDescending(da => da.DateTime.First()).ToList();
+
+            });
+
+            $(function TaskStatus("Suspended") {
+                var da;
+                var from = $("#ProjectEndDate")
+                    .Where(from => from.TaskStatus(false) || (from.TaskStatus("Suspended")))
+                    .GroupBy(from => from.TaskStatus)
+                    .Select(from => from.OrderByDescending(da => da.DateTime.First()).ToList();
+
+            });
+        });
+    </script>*@
+
+
